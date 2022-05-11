@@ -1,0 +1,23 @@
+const r1 = /.abc/;
+const r2 = /.a + b?!!1{4}/;
+const r3 = /.{3}\.b/;
+const r4 = /\w/;
+const r5 = /\s/;
+const r6 = /\d/;
+const r7 = /./;
+const r8 = /[abc]/;
+const r9  = /(abc)/;
+const r10 = /[a-zA-Z_\$\.]+[A-Za-z_\$0-9\.]*@[a-zA-Z_\$\.]+[a-zA-Z_\$0-9\.]*\.(com|net|org){1}/;
+const r11 = /\([0oOn]{1}(_|\s)[0oOn]{1}\)/;
+
+console.log(r1.test("dabc"));
+console.log(r2.test("za   b!!1111"));
+console.log(r3.test("apd.b"));
+console.log(r4.test("a"));
+console.log(r5.test(" "));
+console.log(r6.test("0"));
+console.log(r7.test("8"));
+console.log(r8.test("b"));
+console.log(r9.test("abc"));
+console.log(r10.test("a.$Z@_.net"));
+console.log(r11.test("(0_n)"));
