@@ -1,19 +1,14 @@
+function shiftCyclicallyLetter(ch) {
+  const code = ch.charCodeAt();
+  const nCh = String.fromCharCode(code + 1);
+  if (nCh === "{") return "a";
+  if (nCh === "[") return "A";
+  if (nCh === ":") return "0";
+  return nCh;
+}
+
 function shiftCyclically(s) {
-    let out = "";
-    for (let ch of s) {
-        const code = ch.charCodeAt();
-        const nCh =  String.fromCharCode(code + 1);
-        if (nCh === "{") {
-            out += "a"; 
-        } else if (nCh === "[") {
-            out += "A";
-        } else if (nCh === ":") {
-            out += "0";
-        } else {
-            out += nCh;
-        }
-    }
-    return out;
+  return s.replaceAll(/[a-zA-Z0-9]/g, shiftCyclicallyLetter);
 }
 
 console.log(shiftCyclically("aBc"));
